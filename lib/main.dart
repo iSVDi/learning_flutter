@@ -1,16 +1,18 @@
 import "package:flutter/material.dart";
-import 'package:flutter_application_1/block/todo_bloc.dart';
-import 'package:flutter_application_1/block/todo_page.dart';
+import 'cubit/todo_cubit.dart';
 import "package:flutter_bloc/flutter_bloc.dart";
+import 'package:flutter_application_1/views/todoPage.dart';
 
-void main() => runApp(CounterApp());
+void main() {
+  runApp(ToDoApp());
+}
 
-class CounterApp extends StatelessWidget {
+class ToDoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: BlocProvider(
-      create: (_) => ToDoBloc(),
+      create: (_) => ToDoCubit(),
       child: ToDoPage(),
     ));
   }
